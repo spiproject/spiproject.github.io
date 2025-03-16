@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiLib Cheatsheet</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="SpiLib Logo">
+            <h1>SpiLib Cheatsheet</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="cheatsheet.html">Cheatsheet</a></li>
+                <li><a href="download.html">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cheatsheet">
+        <h2>Basic Functions</h2>
+        <p>Here are some of the most commonly used functions in SpiLib for 2D and 3D game development:</p>
+
+        <ul>
+            <li><code>spilib_init(width, height, title)</code>
+                <p>Initializes the game window with specified width, height, and title. It sets up the framebuffer and GLFW window.</p>
+            </li>
+            <li><code>spilib_begin_frame()</code>
+                <p>Starts a new frame by clearing the framebuffer to prepare for rendering. This should be called at the beginning of each game loop.</p>
+            </li>
+            <li><code>spilib_end_frame()</code>
+                <p>Ends the current frame, draws the framebuffer to the screen, swaps buffers, and processes window events.</p>
+            </li>
+            <li><code>spilib_draw_pixel(x, y, color)</code>
+                <p>Draws a single pixel on the screen at the specified (x, y) coordinates with the given color.</p>
+            </li>
+            <li><code>spilib_draw_rectangle(x, y, width, height, color)</code>
+                <p>Draws a filled rectangle at the specified (x, y) coordinates with the given width, height, and color.</p>
+            </li>
+            <li><code>spilib_key_pressed(key)</code>
+                <p>Checks if a specific key (e.g., <code>GLFW_KEY_LEFT</code>) is pressed during the current frame.</p>
+            </li>
+            <li><code>spilib_mouse_pressed(button)</code>
+                <p>Checks if a specific mouse button (e.g., <code>GLFW_MOUSE_BUTTON_LEFT</code>) is pressed during the current frame.</p>
+            </li>
+            <li><code>spilib_is_running()</code>
+                <p>Returns <code>true</code> if the window should remain open, or <code>false</code> if it should close. Typically used in the game loop to determine if the game is still running.</p>
+            </li>
+        </ul>
+
+        <h2>Advanced 3D Functions</h2>
+        <p>For 3D games, SpiLib provides a few powerful functions for rendering 3D objects:</p>
+        <ul>
+            <li><code>spilib_matrix_rotate(angle)</code>
+                <p>Creates a rotation matrix to rotate objects by the given angle (in degrees) around the Z-axis.</p>
+            </li>
+            <li><code>spilib_draw_cube(x, y, z, size, angle)</code>
+                <p>Draws a 3D cube at the given (x, y, z) coordinates with a specified size and rotation angle.</p>
+            </li>
+            <li><code>spilib_draw_voxel(x, y, z, color)</code>
+                <p>Draws a voxel at the specified (x, y, z) coordinates with the given color. This is useful for creating block-based worlds like Minecraft.</p>
+            </li>
+        </ul>
+
+        <h2>Physics and Collision Detection</h2>
+        <p>SpiLib includes basic physics functions to simulate gravity and check for collisions:</p>
+        <ul>
+            <li><code>spilib_apply_gravity(&y, gravity)</code>
+                <p>Applies gravity to an object's vertical position (y). The gravity parameter is the acceleration applied per frame.</p>
+            </li>
+            <li><code>spilib_check_collision(x1, y1, w1, h1, x2, y2, w2, h2)</code>
+                <p>Checks if two rectangles, defined by their (x, y) position and (w, h) width and height, are colliding.</p>
+            </li>
+        </ul>
+
+        <h2>Camera and Movement</h2>
+        <p>The following functions handle the camera's movement and rotation in a 3D world:</p>
+        <ul>
+            <li><code>spilib_camera_create(x, y, z, rotation)</code>
+                <p>Creates a camera at the specified position (x, y, z) and initial rotation angle.</p>
+            </li>
+            <li><code>spilib_camera_move(&camera, dx, dy, dz)</code>
+                <p>Moves the camera by the specified amounts (dx, dy, dz). Useful for translating the camera in the 3D space.</p>
+            </li>
+            <li><code>spilib_camera_rotate(&camera, d_angle)</code>
+                <p>Rotates the camera by the given angle (d_angle) in degrees.</p>
+            </li>
+        </ul>
+
+        <h2>Multiplayer and Networking</h2>
+        <p>SpiLib can be used to create multiplayer games. Below are the basic functions for networking:</p>
+        <ul>
+            <li><code>spilib_multiplayer_init()</code>
+                <p>Initializes basic networking for multiplayer games. You can use this function to set up a TCP or UDP server.</p>
+            </li>
+        </ul>
+
+        <h2>Sound Management (Placeholder)</h2>
+        <p>SpiLib includes a placeholder function for handling sound:</p>
+        <ul>
+            <li><code>spilib_play_sound(sound_file)</code>
+                <p>Plays the sound file specified by <code>sound_file</code>. (This requires integrating an audio engine.)</p>
+            </li>
+        </ul>
+
+        <h2>Random Numbers</h2>
+        <p>To generate random numbers for game logic, such as AI decisions or level generation, you can use:</p>
+        <ul>
+            <li><code>spilib_random_int(min, max)</code>
+                <p>Generates a random integer between <code>min</code> and <code>max</code> (inclusive).</p>
+            </li>
+        </ul>
+
+        <footer>
+            <p>&copy; 2025 SpiLib. All rights reserved.</p>
+        </footer>
+
+        <script src="assets/js/script.js"></script>
+    </section>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download SPIlib</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="assets/images/logo.png" alt="SpiLib Logo">
+    </div>
+    <h1>Download SPIlib</h1>
+</header>
+
+<!-- Navbar -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="examples.html">Examples</a></li>
+        <li><a href="cheatsheet.html">Cheatsheet</a></li>
+        <li><a href="download.html">Download</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Steps to Get Started</h2>
+    <p>Follow the steps below to include SPIlib in your project:</p>
+
+    <ul>
+        <li><code>Download the SPIlib binaries</code> from the official website or GitHub repository.</li>
+        <li><code>Include the source code:</code> Since SPIlib is an open-source library, include the <code>spilib.c</code> directly into your project.</li>
+        <li><code>Link the library:</code> When compiling your project, make sure to link to <code>libspilib.a</code> using the appropriate compiler flags:
+            <pre><code>gcc game_platformer.c spilib.c -L. -lspilib -lopengl32 -lgdi32 -lglfw3</code></pre>
+        </li>
+        <li><code>GLFW is already linked inside libspilib.a</code> so you don't need to separately include `glfw3.dll` or `spilib.dll` if they are already inside the static library <code>libspilib.a</code>.</li>
+        <li><code>Run your game:</code> Now you can build and run your game using the SPIlib environment!</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 SpiLib. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
